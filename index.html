@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Kasir Makanan - Pink Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <header>
+            <h1>🌸 Kasir Makanan syifa 🌸</h1>
+            <p>Sistem pembayaran cepat dan terpercaya</p>
+        </header>
+
+        <div class="container">
+            <!-- Kolom Kiri: Menu & Pembayaran -->
+            <div class="section-left">
+                <h2>📝 Menu Makanan & Minuman</h2>
+                <div class="menu-list">
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <span class="menu-name">Nasi Goreng Pink</span>
+                            <span class="menu-price">Rp 15.000</span>
+                        </div>
+                        <input type="number" min="0" value="0" class="qty-input" data-nama="Nasi Goreng Pink" data-harga="15000">
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <span class="menu-name">Mie Ayam Manis</span>
+                            <span class="menu-price">Rp 12.000</span>
+                        </div>
+                        <input type="number" min="0" value="0" class="qty-input" data-nama="Mie Ayam Manis" data-harga="12000">
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <span class="menu-name">Bakso Lava</span>
+                            <span class="menu-price">Rp 10.000</span>
+                        </div>
+                        <input type="number" min="0" value="0" class="qty-input" data-nama="Bakso Lava" data-harga="10000">
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <span class="menu-name">Es Teh Manis</span>
+                            <span class="menu-price">Rp 8.000</span>
+                        </div>
+                        <input type="number" min="0" value="0" class="qty-input" data-nama="Es Teh Manis" data-harga="8000">
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <span class="menu-name">Chicken Katsu</span>
+                            <span class="menu-price">Rp 18.000</span>
+                        </div>
+                        <input type="number" min="0" value="0" class="qty-input" data-nama="Chicken Katsu" data-harga="18000">
+                    </div>
+                </div>
+
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="diskon">Diskon (%):</label>
+                        <input type="number" id="diskon" min="0" max="100" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="bayar">Uang Pembayaran (Rp):</label>
+                        <input type="number" id="bayar" placeholder="Masukkan jumlah uang">
+                    </div>
+                </div>
+
+                <button class="btn-primary" onclick="prosesTransaksi()">Hitung & Bayar 💳</button>
+            </div>
+
+            <!-- Kolom Kanan: Struk & Riwayat -->
+            <div class="section-right">
+                <!-- Struk Hasil Transaksi -->
+                <div class="receipt" id="struk" style="display: none;">
+                    <h3>🎀 Struk Pembayaran 🎀</h3>
+                    <div id="detailTransaksi"></div>
+                </div>
+
+                <!-- Riwayat Transaksi (LocalStorage) -->
+                <div class="history-section">
+                    <div class="history-header">
+                        <h2>📜 Riwayat Transaksi</h2>
+                        <button onclick="hapusRiwayat()" class="btn-clear">Hapus Riwayat</button>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Menu Dipesan</th>
+                                    <th>Total Bayar</th>
+                                    <th>Kembalian</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelRiwayat">
+                                <!-- Data riwayat masuk ke sini -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

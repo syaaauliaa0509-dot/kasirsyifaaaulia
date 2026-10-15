@@ -1,0 +1,258 @@
+:root {
+    --pink-primary: #ff5c8a;
+    --pink-light: #fff0f5;
+    --pink-medium: #ffb3c6;
+    --pink-dark: #d6336c;
+    --bg-color: #fcf4f7;
+    --text-color: #333333;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+.main-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: var(--pink-dark);
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    color: #777;
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+
+/* Layout 2 Kolom */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+@media (max-width: 850px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.section-left, .section-right {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(255, 92, 138, 0.08);
+}
+
+h2 {
+    color: var(--pink-dark);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--pink-light);
+    padding-bottom: 8px;
+}
+
+/* Menu Item Styling */
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--pink-light);
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #fae1ed;
+}
+
+.menu-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.menu-price {
+    font-size: 12px;
+    color: var(--pink-dark);
+    margin-top: 2px;
+}
+
+.qty-input {
+    width: 60px;
+    padding: 6px;
+    text-align: center;
+    border: 2px solid var(--pink-medium);
+    border-radius: 8px;
+    outline: none;
+    font-weight: bold;
+    background: var(--white);
+}
+
+.qty-input:focus {
+    border-color: var(--pink-primary);
+}
+
+/* Form Rows */
+.form-group-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--pink-dark);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: var(--pink-primary);
+    background-color: #fff9fb;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--pink-primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(255, 92, 138, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--pink-dark);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.history-header h2 {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+.btn-clear {
+    background-color: #ffe3ec;
+    color: var(--pink-dark);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-clear:hover {
+    background-color: var(--pink-medium);
+    color: white;
+}
+
+/* Receipt Styling */
+.receipt {
+    background-color: var(--pink-light);
+    border: 2px dashed var(--pink-primary);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.receipt h3 {
+    margin-top: 0;
+    color: var(--pink-dark);
+    text-align: center;
+    font-size: 15px;
+}
+
+#detailTransaksi {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Table Styling */
+.table-container {
+    max-height: 220px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: var(--pink-primary);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+tr:nth-child(even) {
+    background-color: var(--pink-light);
+}
